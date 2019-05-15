@@ -12,6 +12,14 @@ import Vision
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
 
+    let identifierLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .white
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,36 +44,45 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
         captureSession.addOutput(dataOutput)
         
+        setupIdentifierConfidenceLabel()
+    }
     
-      //  VNImageRequestHandler(cgImage: <#T##CGImage#>, options: [:]).perform(requests)
-        
+    fileprivate func setupIdentifierConfidenceLabel() {
+        view.addSubview(identifierLabel)
+        identifierLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32).isActive = true
+        identifierLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        identifierLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        identifierLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-      //  print("Camera was able to capture a frame", Date())
+        //        print("Camera was able to capture a frame:", Date())
         
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
-        guard let model = try? VNCoreMLModel(for: Resnet50().model) else {return}
-        let request = VNCoreMLRequest(model: model)
-        {
-            (finishedReq, err) in
+        // !!!Important
+        // make sure to go download the models at https://developer.apple.com/machine-learning/ scroll to the bottom
+        guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else { return }
+        let request = VNCoreMLRequest(model: model) { (finishedReq, err) in
             
-            //Check Error
+            //perhaps check the err
             
-         //   print(finishedReq.results)
+            //            print(finishedReq.results)
             
-            guard let results = finishedReq.results as? [VNClassificationObservation] else {return}
+            guard let results = finishedReq.results as? [VNClassificationObservation] else { return }
             
-            guard let firstObservation = results.first else {return}
+            guard let firstObservation = results.first else { return }
             
             print(firstObservation.identifier, firstObservation.confidence)
+            
+            DispatchQueue.main.async {
+                self.identifierLabel.text = "\(firstObservation.identifier) \(firstObservation.confidence * 100)"
+            }
+            
         }
         
-       try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
+        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
     }
-
+    
 }
-
-
 
