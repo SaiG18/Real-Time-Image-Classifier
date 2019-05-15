@@ -16,6 +16,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         let label = UILabel()
         label.backgroundColor = .white
         label.textAlignment = .center
+        label.font = label.font.withSize(17)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -26,7 +27,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         // Trigger Camera
         let captureSession = AVCaptureSession()
-        captureSession.sessionPreset = .photo
+        //captureSession.sessionPreset = .photo
         
         guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
         guard let input = try? AVCaptureDeviceInput(device: captureDevice) else { return }
