@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  ImageClassifer
+//  CoreML iOS ImageClassifer
 //
 //  Created by Sai Gurrapu on 5/15/19.
 //  Copyright © 2019 Sai Gurrapu. All rights reserved.
