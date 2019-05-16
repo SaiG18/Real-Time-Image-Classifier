@@ -14,7 +14,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 
     let identifierLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .white
+        label.backgroundColor = .yellow
         label.textAlignment = .center
         label.font = label.font.withSize(17)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -57,18 +57,11 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        //        print("Camera was able to capture a frame:", Date())
         
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        
-        // !!!Important
-        // make sure to go download the models at https://developer.apple.com/machine-learning/ scroll to the bottom
+
         guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else { return }
         let request = VNCoreMLRequest(model: model) { (finishedReq, err) in
-            
-            //perhaps check the err
-            
-            //            print(finishedReq.results)
             
             guard let results = finishedReq.results as? [VNClassificationObservation] else { return }
             
