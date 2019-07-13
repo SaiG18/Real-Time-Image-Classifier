@@ -13,7 +13,6 @@
 		3117518E228CB03F008FA483 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3117518D228CB03F008FA483 /* Assets.xcassets */; };
 		31175191228CB03F008FA483 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3117518F228CB03F008FA483 /* LaunchScreen.storyboard */; };
 		3117519B228CBE81008FA483 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3117519A228CBE81008FA483 /* Resnet50.mlmodel */; };
-		317919C2228CDC9A00F99436 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 317919C1228CDC9A00F99436 /* Inceptionv3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		31175190228CB03F008FA483 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31175192228CB03F008FA483 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3117519A228CBE81008FA483 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Resnet50.mlmodel; path = ../../../../../../Downloads/Resnet50.mlmodel; sourceTree = "<group>"; };
-		317919C1228CDC9A00F99436 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Inceptionv3.mlmodel; path = ../../../../../../Downloads/Inceptionv3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +60,6 @@
 				31175188228CB03E008FA483 /* ViewController.swift */,
 				3117518A228CB03E008FA483 /* Main.storyboard */,
 				3117519A228CBE81008FA483 /* Resnet50.mlmodel */,
-				317919C1228CDC9A00F99436 /* Inceptionv3.mlmodel */,
 				3117518D228CB03F008FA483 /* Assets.xcassets */,
 				3117518F228CB03F008FA483 /* LaunchScreen.storyboard */,
 				31175192228CB03F008FA483 /* Info.plist */,
@@ -142,7 +139,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				31175189228CB03E008FA483 /* ViewController.swift in Sources */,
-				317919C2228CDC9A00F99436 /* Inceptionv3.mlmodel in Sources */,
 				3117519B228CBE81008FA483 /* Resnet50.mlmodel in Sources */,
 				31175187228CB03E008FA483 /* AppDelegate.swift in Sources */,
 			);
