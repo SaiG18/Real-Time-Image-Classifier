@@ -1,6 +1,7 @@
 //
 //  ViewController.swift
 //  CoreML iOS ImageClassifer
+//  DO NOT RUN ON ACTUAL IPHONE. APP BREAKS THE IPHONE!!
 //
 //  Created by Sai Gurrapu on 5/15/19.
 //  Copyright © 2019 Sai Gurrapu. All rights reserved.
