@@ -14,7 +14,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 
     let identifierLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .yellow
+        label.backgroundColor = .black
         label.textAlignment = .center
         label.font = label.font.withSize(17)
         label.translatesAutoresizingMaskIntoConstraints = false

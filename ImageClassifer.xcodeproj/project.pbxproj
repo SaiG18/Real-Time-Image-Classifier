@@ -12,6 +12,7 @@
 		3117518C228CB03E008FA483 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3117518A228CB03E008FA483 /* Main.storyboard */; };
 		3117518E228CB03F008FA483 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3117518D228CB03F008FA483 /* Assets.xcassets */; };
 		31175191228CB03F008FA483 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3117518F228CB03F008FA483 /* LaunchScreen.storyboard */; };
+		316B436723C1187400EEA2F5 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 316B436623C1187400EEA2F5 /* Resnet50.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3117518D228CB03F008FA483 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31175190228CB03F008FA483 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31175192228CB03F008FA483 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		316B436623C1187400EEA2F5 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				31175186228CB03E008FA483 /* AppDelegate.swift */,
 				31175188228CB03E008FA483 /* ViewController.swift */,
 				3117518A228CB03E008FA483 /* Main.storyboard */,
+				316B436623C1187400EEA2F5 /* Resnet50.mlmodel */,
 				3117518D228CB03F008FA483 /* Assets.xcassets */,
 				3117518F228CB03F008FA483 /* LaunchScreen.storyboard */,
 				31175192228CB03F008FA483 /* Info.plist */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31175189228CB03E008FA483 /* ViewController.swift in Sources */,
+				316B436723C1187400EEA2F5 /* Resnet50.mlmodel in Sources */,
 				31175187228CB03E008FA483 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
